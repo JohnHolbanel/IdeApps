@@ -6,7 +6,7 @@
           <b-navbar-nav>
             <!-- Profile picture -->
             <b-navbar-brand href="#">
-              <img src="./assets/profile.jpg" alt="Profile" height="32" width="32">
+              <img src="./assets/profile.jpg" @click="profileClicked" alt="Profile" height="32" width="32">
             </b-navbar-brand>
             <!-- Search bar -->
             <b-nav-form>
@@ -101,8 +101,12 @@ export default {
       this.$router.push("description")
     },
 
-    undoClicked: () => {
-      console.log("Undo clicked!")
+    undoClicked: function() {
+      console.log(this.$router) // don't mind this
+    },
+
+    profileClicked: function() {
+      this.$router.push("profile")
     }
   }
 }
